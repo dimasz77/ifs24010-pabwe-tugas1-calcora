@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calcora – Smart Web Calculator</title>
+  <meta name="description" content="Calcora adalah kalkulator web cerdas dengan riwayat perhitungan.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+
+    <header class="header">
+      <div class="brand">
+        <svg class="brand__logo" viewBox="0 0 40 40" width="40" height="40" role="img" aria-label="Logo Calcora">
+          <rect width="40" height="40" rx="11" fill="#0B1F4B"/>
+          <path d="M26 14.5A8.5 8.5 0 1 0 26 25.5" fill="none" stroke="#2F6BFF" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="27.5" cy="20" r="2.6" fill="#22D3EE"/>
+        </svg>
+        <div class="brand__text">
+          <h1 class="brand__name">Calcora</h1>
+          <p class="brand__tagline">Smart Web Calculator</p>
+        </div>
+      </div>
+
+      <button class="theme-toggle" id="theme-toggle" type="button" data-action="toggle-theme" aria-label="Ganti tema terang/gelap">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+        <span class="theme-toggle__label">Tema</span>
+      </button>
+    </header>
+
+    <main class="layout">
+
+      <section class="calculator" aria-label="Kalkulator">
+        <div class="display" id="display" aria-live="polite">
+          <div class="display__expression" id="expression">&nbsp;</div>
+          <div class="display__result" id="result">0</div>
+        </div>
+
+        <div class="keypad" role="group" aria-label="Tombol kalkulator">
+          <button type="button" class="key key--fn" data-action="clear" data-value="AC">AC</button>
+          <button type="button" class="key key--fn" data-action="delete" data-value="DEL">DEL</button>
+          <button type="button" class="key key--fn" data-action="percent" data-value="%">%</button>
+          <button type="button" class="key key--op" data-action="operator" data-value="/" aria-label="Bagi">÷</button>
+
+          <button type="button" class="key" data-action="number" data-value="7">7</button>
+          <button type="button" class="key" data-action="number" data-value="8">8</button>
+          <button type="button" class="key" data-action="number" data-value="9">9</button>
+          <button type="button" class="key key--op" data-action="operator" data-value="*" aria-label="Kali">×</button>
+
+          <button type="button" class="key" data-action="number" data-value="4">4</button>
+          <button type="button" class="key" data-action="number" data-value="5">5</button>
+          <button type="button" class="key" data-action="number" data-value="6">6</button>
+          <button type="button" class="key key--op" data-action="operator" data-value="-" aria-label="Kurang">−</button>
+
+          <button type="button" class="key" data-action="number" data-value="1">1</button>
+          <button type="button" class="key" data-action="number" data-value="2">2</button>
+          <button type="button" class="key" data-action="number" data-value="3">3</button>
+          <button type="button" class="key key--op" data-action="operator" data-value="+" aria-label="Tambah">+</button>
+
+          <button type="button" class="key key--fn" data-action="negate" data-value="±" aria-label="Ubah tanda">±</button>
+          <button type="button" class="key" data-action="number" data-value="0">0</button>
+          <button type="button" class="key" data-action="decimal" data-value="." aria-label="Titik desimal">.</button>
+          <button type="button" class="key key--equals" data-action="equals" data-value="=" aria-label="Hitung">=</button>
+        </div>
+      </section>
+
+      <aside class="history" aria-labelledby="history-title">
+        <div class="history__head">
+          <div class="history__title-wrap">
+            <h2 class="history__title" id="history-title">Riwayat</h2>
+            <span class="history__count" id="history-count">0 entri</span>
+          </div>
+          <button type="button" class="history__clear" id="history-clear" data-action="clear-history" disabled>Hapus riwayat</button>
+        </div>
+
+        <ul class="history__list" id="history-list" aria-label="Daftar riwayat perhitungan"></ul>
+
+        <p class="history__empty" id="history-empty">
+          Belum ada perhitungan. Hasil yang Anda hitung akan muncul di sini.
+        </p>
+      </aside>
+
+    </main>
+
+    <footer class="footer">
+      <p>Calcora &middot; Tugas I PABWE &middot; Dimas Rexan Samuel Sidabutar (11S24010) &middot; Institut Teknologi Del</p>
+    </footer>
+  </div>
+  <script src="js/storage.js"></script>
+  <script src="js/history.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

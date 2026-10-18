@@ -1,0 +1,12 @@
+{
+  "name": "calcora-pabwe",
+  "version": "1.0.0",
+  "description": "Calcora - Smart Web Calculator (Tugas I PABWE)",
+  "private": true,
+  "scripts": {
+    "test": "node tests/calculator.test.js && node tests/app.test.js",
+    "start": "python -m http.server 5500"
+  },
+  "engines": { "node": ">=16" },
+  "license": "UNLICENSED"
+}
